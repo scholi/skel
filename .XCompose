@@ -1,0 +1,260 @@
+include "/usr/share/X11/locale/en_US.UTF-8/Compose"
+
+# Math
+<Multi_key> <I> <Z> : "ℤ"
+<Multi_key> <I> <N> : "ℕ"
+<Multi_key> <I> <R> : "ℝ"
+<Multi_key> <I> <C> : "ℂ"
+<Multi_key> <I> <Q> : "ℚ"
+<Multi_key> <i> <n> : "∈"
+<Multi_key> <n> <i> : "∋"
+<Multi_key> <plus> <minus> : "±"
+<Multi_key> <minus> <plus> : "∓"
+<Multi_key> <p> <m> : "∝"
+<Multi_key> <q> <r> : "∛"
+<Multi_key> <a> <n> : "∡"
+<Multi_key> <A> <m> : "∀"
+<Multi_key> <d> <m> : "∂"
+<Multi_key> <E> <m> : "∃"
+<Multi_key> <E> <n> : "∄"
+<Multi_key> <I> <n> : "∫"
+<Multi_key> <I> <o> : "∮"
+<Multi_key> <s> <r> : "√"
+<Multi_key> <s> <u> : "∑"
+<Multi_key> <N> <B> : "∇"
+<Multi_key> <0> <0> : "∞"
+<Multi_key> <p> <r> : "∏" U220f
+<Multi_key> <greater> <equal> : "≥" U2265
+<Multi_key> <less> <equal> : "≤" U2264
+<Multi_key> <period> <space> : "∙"
+<Multi_key> <period> <colon> : "∴"
+<Multi_key> <colon> <period> : "∵"
+<Multi_key> <percent> <0> : "‰"
+<Multi_key> <percent> <percent> : "‱"
+
+# Physics
+<Multi_key> <h> <minus> : "ℏ"
+<Multi_key> <H> <s> : "ℋ"
+
+# Exposant
+<Multi_key> <1> <u> : "¹"
+<Multi_key> <2> <u> : "²"
+<Multi_key> <3> <u> : "³"
+<Multi_key> <4>	<u> : "⁴"
+<Multi_key> <5>	<u> : "⁵"
+<Multi_key> <6>	<u> : "⁶"
+<Multi_key> <7>	<u> : "⁷"
+<Multi_key> <8>	<u> : "⁸"
+<Multi_key> <9>	<u> : "⁹"
+<Multi_key> <0>	<u> : "⁰"
+<Multi_key> <plus> <u> : "⁺"
+<Multi_key> <minus> <u> : "⁻"
+<Multi_key> <equal> <u> : "⁼"
+<Multi_key> <parenleft> <u> : "⁽"
+<Multi_key> <parenright> <u> : "⁾"
+<Multi_key> <n> <u> : "ⁿ"
+
+# Indices
+<Multi_key> <1> <d> : "₁"
+<Multi_key> <2> <d> : "₂"
+<Multi_key> <3> <d> : "₃"
+<Multi_key> <4> <d> : "₄"
+<Multi_key> <5> <d> : "₅"
+<Multi_key> <6> <d> : "₆"
+<Multi_key> <7> <d> : "₇"
+<Multi_key> <8> <d> : "₈"
+<Multi_key> <9> <d> : "₉"
+<Multi_key> <0> <d> : "₀"
+<Multi_key> <plus> <d> : "₊"
+<Multi_key> <minus> <d> : "₋"
+<Multi_key> <equal> <d> : "₌"
+<Multi_key> <parenleft> <d> : "₍"
+<Multi_key> <parenright> <d> : "₎"
+
+# Circled
+<Multi_key> <1> <o> : "①"
+<Multi_key> <2> <o> : "②"
+<Multi_key> <3> <o> : "③"
+<Multi_key> <4> <o> : "④"
+<Multi_key> <5> <o> : "⑤"
+<Multi_key> <6> <o> : "⑥"
+<Multi_key> <7> <o> : "⑦"
+<Multi_key> <8> <o> : "⑧"
+<Multi_key> <9> <o> : "⑨"
+<Multi_key> <0> <O> : "⑩"
+
+# Misc
+<Multi_key> <v> <u> : "✓" U2713
+<Multi_key> <c> <k> : "✗" U2717
+<Multi_key> <plus> <bar> : "†"
+<Multi_key> <plus> <plus> : "‡"
+<Multi_key> <asterisk> <asterisk> : "⁑"
+<Multi_key> <asterisk> <3> : "⁂"
+
+# Greek
+<Multi_key> <S> <asterisk> : "Σ"
+<Multi_key> <W> <asterisk> : "Ω"
+<Multi_key> <H> <asterisk> : "Θ"
+<Multi_key> <L> <asterisk> : "Λ"
+<Multi_key> <C> <asterisk> : "Ξ"
+<Multi_key> <Q> <asterisk> : "Ψ"
+<Multi_key> <F> <asterisk> : "Φ"
+
+<Multi_key> <a> <asterisk> : "α"
+<Multi_key> <b> <asterisk> : "β"
+<Multi_key> <c> <asterisk> : "ξ"
+<Multi_key> <d> <asterisk> : "δ"
+<Multi_key> <e> <asterisk> : "ε"
+<Multi_key> <f> <asterisk> : "φ"
+<Multi_key> <f> <numbersign> : "ϕ"
+<Multi_key> <g> <asterisk> : "γ"
+<Multi_key> <h> <asterisk> : "θ"
+<Multi_key> <i> <asterisk> : "ι"
+<Multi_key> <j> <asterisk> : "ϊ"
+<Multi_key> <k> <asterisk> : "κ"
+<Multi_key> <l> <asterisk> : "λ"
+<Multi_key> <m> <asterisk> : "μ"
+<Multi_key> <n> <asterisk> : "ν"
+<Multi_key> <o> <asterisk> : "ο"
+<Multi_key> <p> <asterisk> : "π"
+<Multi_key> <q> <asterisk> : "ψ"
+<Multi_key> <r> <asterisk> : "ρ"
+<Multi_key> <s> <asterisk> : "σ"
+<Multi_key> <t> <asterisk> : "τ"
+<Multi_key> <u> <asterisk> : "υ"
+<Multi_key> <v> <asterisk> : "ϋ"
+<Multi_key> <w> <asterisk> : "ω"
+<Multi_key> <x> <asterisk> : "χ"
+<Multi_key> <y> <asterisk> : "η"
+<Multi_key> <z> <asterisk> : "ζ"
+
+
+# Bullets
+<Multi_key> <b> <u> : "•"
+<Multi_key> <t> <r> : "▸"
+
+# Blocks
+<Multi_key> <T> <B> : "▀"
+<Multi_key> <L> <B> : "▄"
+<Multi_key> <F> <B> : "█"
+<Multi_key> <l> <B> : "▌"
+<Multi_key> <r> <B> : "▐"
+<Multi_key> <period> <B> : "░"
+<Multi_key> <colon> <B> : "▒"
+<Multi_key> <numbersign> <B> : "▓"
+
+## Frames
+# Bold
+<Multi_key> <U> <L> : "┛"
+<Multi_key> <U> <R> : "┗"
+<Multi_key> <D> <L> : "┓"
+<Multi_key> <D> <R> : "┏"
+<Multi_key> <V> <V> : "┃"
+<Multi_key> <H> <H> : "━"
+<Multi_key> <V> <H> : "╋"
+<Multi_key> <V> <R> : "┣"
+<Multi_key> <V> <L> : "┫"
+<Multi_key> <U> <H> : "┻"
+<Multi_key> <D> <H> : "┳"
+# Simple
+<Multi_key> <u> <l> : "┘"
+<Multi_key> <u> <r> : "└"
+<Multi_key> <d> <l> : "┐"
+<Multi_key> <d> <r> : "┌"
+<Multi_key> <v> <v> : "│"
+<Multi_key> <h> <h> : "─"
+<Multi_key> <v> <h> : "┼"
+<Multi_key> <v> <l> : "┤"
+<Multi_key> <v> <r> : "├"
+<Multi_key> <u> <h> : "┴"
+<Multi_key> <d> <h> : "┬"
+# Bold-Simple
+<Multi_key> <U> <l> : "┚"
+<Multi_key> <u> <L> : "┙"
+<Multi_key> <D> <l> : "┒"
+<Multi_key> <d> <L> : "┑"
+<Multi_key> <d> <R> : "┍"
+<Multi_key> <D> <r> : "┎"
+<Multi_key> <u> <R> : "┕"
+<Multi_key> <U> <r> : "┖"
+<Multi_key> <v> <H> : "┿"
+<Multi_key> <V> <h> : "╂"
+<Multi_key> <v> <R> : "┝"
+<Multi_key> <V> <r> : "┠"
+<Multi_key> <v> <L> : "┥"
+<Multi_key> <V> <l> : "┨"
+<Multi_key> <U> <h> : "┸"
+<Multi_key> <u> <H> : "┷"
+<Multi_key> <D> <h> : "┰"
+<Multi_key> <d> <H> : "┯"
+# Bordures double
+<Multi_key> <b> <minus> : "═" U2550
+<Multi_key> <b> <bar> : "║" U2551
+<Multi_key> <b> <7> : "╔" U2554
+<Multi_key> <b> <9> : "╗" U2557
+<Multi_key> <b> <1> : "╚" U255a
+<Multi_key> <b> <3> : "╝" U255d
+<Multi_key> <b> <4> : "╣" U2563
+<Multi_key> <b> <6> : "╠" U2560
+<Multi_key> <b> <8> : "╩" U2569
+<Multi_key> <b> <2> : "╦" U2566
+<Multi_key> <b> <5> : "╬" U256c
+# Double-Simple
+<Multi_key> <d> <6> : "╒"
+<Multi_key> <2> <r> : "╓"
+<Multi_key> <d> <4> : "╕"
+<Multi_key> <2> <l> : "╖"
+<Multi_key> <u> <6> : "╘"
+<Multi_key> <8> <r> : "╙"
+<Multi_key> <u> <4> : "╛"
+<Multi_key> <8> <l> : "╜"
+<Multi_key> <v> <6> : "╞"
+<Multi_key> <bar> <r> : "╟"
+<Multi_key> <v> <4> : "╡"
+<Multi_key> <bar> <l> : "╢"
+<Multi_key> <equal> <d> : "╤"
+<Multi_key> <h> <2> : "╥"
+<Multi_key> <equal> <u> : "╧"
+<Multi_key> <h> <8> : "╨"
+<Multi_key> <v> <equal> : "╪"
+<Multi_key> <bar> <h> : "╫"
+
+## Fleches
+# simple
+<Multi_key> <less> <minus> : "←"
+<Multi_key> <minus> <greater> : "→"
+<Multi_key> <bar> <u> : "↑"
+<Multi_key> <bar> <v> : "↓"
+<Multi_key> <less> <greater> : "↔"
+<Multi_key> <u> <d> : "↕"
+# double
+<Multi_key> <equal> <less> : "⇐"
+<Multi_key> <equal> <greater> : "⇒"
+<Multi_key> <equal> <equal> : "⇔"
+<Multi_key> <u> <d> : "⇅" U21c5
+<Multi_key> <d> <u> : "⇵" U21f5
+<Multi_key> <u> <u> : "⇈" U21c8
+<Multi_key> <d> <d> : "⇊" U21ca
+
+# Symboles divers
+<Multi_key> <k> <b> : "⌨" U2328
+
+# Checkboxes
+<Multi_key> <bracketleft> <bracketright> : "☐" U2610
+<Multi_key> <bracketleft> <v> <bracketright> : "☑" U2611
+<Multi_key> <bracketleft> <x> <bracketright> : "☒" U2612 
+
+
+<Multi_key> <C> <K> : "♔"
+<Multi_key> <C> <Q> : "♕"
+<Multi_key> <C> <R> : "♖"
+<Multi_key> <C> <B> : "♗"
+<Multi_key> <C> <N> : "♘"
+<Multi_key> <C> <P> : "♙"
+<Multi_key> <C> <k> : "♚"
+<Multi_key> <C> <q> : "♛"
+<Multi_key> <C> <r> : "♜"
+<Multi_key> <C> <b> : "♝"
+<Multi_key> <C> <n> : "♞"
+<Multi_key> <C> <p> : "♟"
+
