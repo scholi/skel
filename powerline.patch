@@ -1,0 +1,37 @@
+diff --git a/powerline/lib/vcs/__init__.py b/powerline/lib/vcs/__init__.py
+index 1b7f5e2..a4ed8a2 100644
+--- a/powerline/lib/vcs/__init__.py
++++ b/powerline/lib/vcs/__init__.py
+@@ -16,6 +16,8 @@ def generate_directories(path):
+ 	if os.path.isdir(path):
+ 		yield path
+ 	while True:
++		if type(path) is bytes:
++			path = path.decode('utf8')
+ 		if os.path.ismount(path):
+ 			break
+ 		old_path = path
+@@ -229,6 +231,8 @@ vcs_props_bytes = [
+ def guess(path, create_watcher):
+ 	for directory in generate_directories(path):
+ 		for vcs, vcs_dir, check in (vcs_props_bytes if isinstance(path, bytes) else vcs_props):
++			if type(vcs_dir) is bytes:
++			    vcs_dir = vcs_dir.decode('utf8')
+ 			repo_dir = os.path.join(directory, vcs_dir)
+ 			if check(repo_dir):
+ 				if os.path.isdir(repo_dir) and not os.access(repo_dir, os.X_OK):
+diff --git a/powerline/segments/vim/__init__.py b/powerline/segments/vim/__init__.py
+index f89b965..4b4f6cd 100644
+--- a/powerline/segments/vim/__init__.py
++++ b/powerline/segments/vim/__init__.py
+@@ -554,6 +554,10 @@ def file_vcs_status(pl, segment_info, create_watcher):
+ 	if not skip:
+ 		repo = guess(path=name, create_watcher=create_watcher)
+ 		if repo is not None:
++			if type(repo.directory) is bytes:
++			    repo.directory = repo.sirectory.decode('utf8')
++			if type(name) is bytes:
++			    name = name.decode('utf8')
+ 			status = repo.status(os.path.relpath(name, repo.directory))
+ 			if not status:
+ 				return None
