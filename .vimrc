@@ -1,8 +1,10 @@
-﻿scriptencoding utf-8
-set encoding=utf-8
+﻿set encoding=utf-8
+scriptencoding utf-8
 let g:pymode_python = 'python3'
+noremap :py :py3
 set showbreak=\u21aa
-let &listchars="tab:\u2192_,eol:\u21b5,nbsp:\u2423"
+set listchars=tab:→_,eol:↵,nbsp:␣
+"let &listchars="tab:\u2192_,eol:\u21b5,nbsp:\u2423"
 nmap <F3> :set list!<CR>
 set linebreak
 nnoremap <C-CR> <C-]>
@@ -131,6 +133,8 @@ augroup pythongroup
 augroup END
 
 au BufWritePost *.py,*.c,*.h,*.cpp call UpdateTags()
+
+let g:jedi#popup_on_dot=0
 
 nnoremap <silent> <F8> :TlistOpen<CR>
 nmap <C-h> <Plug>GitGutterNextHunk
