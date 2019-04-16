@@ -1,11 +1,14 @@
 ﻿set encoding=utf-8
 scriptencoding utf-8
+
 let g:pymode_python = 'python3'
 noremap :py :py3
-set showbreak=\u21aa
+
+set showbreak=↪
 set listchars=tab:→_,eol:↵,nbsp:␣
 "let &listchars="tab:\u2192_,eol:\u21b5,nbsp:\u2423"
 nmap <F3> :set list!<CR>
+
 set linebreak
 nnoremap <C-CR> <C-]>
 set laststatus=2
@@ -15,6 +18,7 @@ set noshowmode
 set guifont=DejaVu_Sans_Mono_for_Powerline:h10
 set backspace=2
 set backspace=indent,eol,start
+let g:pony_manage_filename="manage.py"
 syntax on
 set nu
 hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red
@@ -44,27 +48,27 @@ imap <S-Left> <Esc>v<Left>
 imap <S-Right> <Esc>v<Right>
 filetype indent plugin on
 set ts=4 sw=4 sts=0
-nnoremap <Space> i_<esc>r
+nnoremap <Space> a_<esc>r
 
 call plug#begin('~/vimfiles/plugged')
 Plug 'lervag/vimtex'
 Plug 'xuhdev/vim-latex-live-preview', { 'for':'tex' }
-Plug 'erichdongubler/vim-sublime-monokai'
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'flazz/vim-colorschemes' " Color schemes
+Plug 'powerline/powerline' " status and tab line
+Plug 'powerline/fonts' " Special font for powerline
 Plug 'fweep/vim-tabber'
-Plug 'flazz/vim-colorschemes'
-Plug 'powerline/powerline'
-Plug 'powerline/fonts'
 Plug 'vim-voom/VOoM'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter' " Git diff in margin
+Plug 'tpope/vim-fugitive' " Git cmd
 Plug 'mileszs/ack.vim'
 Plug 'vim-scripts/taglist.vim'
 Plug 'vim-scripts/toggle_comment'
-Plug 'scrooloose/nerdtree'
-Plug 'davidhalter/jedi-vim'
-Plug 'kien/ctrlp.vim'
-Plug 'wmvanvliet/vim-ipython'
+Plug 'scrooloose/nerdtree' " Explorer
+Plug 'davidhalter/jedi-vim' " For python
+"Plug 'kien/ctrlp.vim'
+Plug 'wmvanvliet/vim-ipython' " IPython integration
+Plug 'kh3phr3n/python-syntax' " better syntax highlight for python
+Plug 'scholi/vim-pony'
 "Plug 'scrooloose/syntastic'
 call plug#end()
 colorscheme molokai_dark
@@ -104,17 +108,24 @@ function! UpdateTags()
   let resp = system(cmd)
 endfunction
 
-functio! LeftHalfWindow()
+function! LeftHalfWindow()
 	winpos 0 0
 	set lines=999
 	set columns=999
 	let &columns=&columns/2
 endfunction
 
-"set the vim windows to either Full Screen or Left-Half of screen for Latex
-au GUIEnter call LeftHalfWindow()
-au GUIEnter * if &ft!='tex' | winpos 0 0
-au GUIEnter * if &ft!='tex' | set lines=999 columns=999
+function! ToggleFullHalfScreen()
+    winpos 0 0
+    let last_columns=&columns
+    set lines=999
+    set columns=999
+    if &columns==last_columns
+       let &columns=&columns/2
+    endif
+endfunction
+
+nmap <F4> :call ToggleFullHalfScreen()<CR>
 
 augroup latexgroup
     au!
@@ -122,9 +133,9 @@ augroup latexgroup
     au FileType tex set foldexpr=vimtex#fold#level(v:lnum)
     au FileType tex normal zR
     au FileType tex let g:vimtex_latexmk_continuous=0
-	au BufEnter *.tex simalt ~r
 	au BufEnter *.tex call LeftHalfWindow()
-	au BufLeave *.tex simalt ~x
+	au BufEnter *.tex nnoremap <silent> <F8> :Voom latex<CR>
+	au BufLeave *.tex nnoremap <silent> <F8> :TlistOpen<CR>
 augroup END
 
 augroup pythongroup
@@ -132,9 +143,10 @@ augroup pythongroup
     au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
 augroup END
 
-au BufWritePost *.py,*.c,*.h,*.cpp call UpdateTags()
+au BufWritePost *.py,*.tex,*.c,*.h,*.cpp call UpdateTags()
 
 let g:jedi#popup_on_dot=0
+let g:jedi#show_call_signatures=0
 
 nnoremap <silent> <F8> :TlistOpen<CR>
 nmap <C-h> <Plug>GitGutterNextHunk
@@ -147,3 +159,4 @@ syn match BadWhitespace /\s\+$/ containedin=ALL
 syn match ExtraWhitespace / \+\ze\t/ containedin=ALL
 map <C-m> :NERDTreeToggle<CR>
 map <F2> :tabe ~/.vimrc<CR>
+set fo-=t
