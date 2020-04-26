@@ -140,6 +140,22 @@ batstatus()
 	echo "$sbat"
 }
 
+cpu_temp(){
+	TEMP=`vcgencmd measure_temp | cut -d'=' -f2 | grep -oP '[\d\.]+'`
+	echo ${TEMP}
+}
+
+cpu_color() {
+	TEMP=`vcgencmd measure_temp | cut -d'=' -f2 | grep -oP '[\d\.]+'`
+	if (( $(echo "$TEMP > 60" | bc -l) )); then
+		echo "[33m"
+	elif (( $(echo "$TEMP > 70"  | bc -l) )); then
+		echo "[31m"
+	else
+		echo "[32m"
+	fi
+}
+
 onBat="no"
 acpi > /dev/null 2>&1
 if [ $? -eq 0 ]
@@ -155,19 +171,9 @@ if [ "$color_prompt" = yes ]; then
 	cUSER="38;5;202"
 	cPATH="38;5;102"
 	cTIME="35"
-	if [ $onBat == "yes" ]
-	then
-		PS1="[\[\033[${cTIME}m\]\t\[\033[m\]][\[\033\`batcolor\`\]\`batstatus\`\[\033[0m\]] \` if [ \$? = 0 ]; then echo \[\e[32m\]:\)\[\e[0m\]; else echo \[\e[31m\]:\(\[\e[0m\]; fi\` \[\033[${cUSER}m\]\u\[\033[0m\]@\[\033[${hc}m\]\h\[\033[0m\]:\[\033[${cPATH}m\]\W\[\e[\`gitstatusColor\`m\]\`gitstatus\`\[\w[0m\]\$ "
-	else
-		PS1="[\[\033[${cTIME}m\]\t\[\033[m\]] \` if [ \$? = 0 ]; then echo \[\e[32m\]:\)\[\e[0m\]; else echo \[\e[31m\]:\(\[\e[0m\]; fi\` \[\033[${cUSER}m\]\u\[\033[0m\]@\[\033[${hc}m\]\h\[\033[0m\]:\[\033[${cPATH}m\]\W\[\033[0m\]\$ "	
-	fi
+	PS1="[\[\033[${cTIME}m\]\t\[\033[m\]][\[\e\`cpu_color\`\]\`cpu_temp\`\[\e[0m\]] \` if [ \$? = 0 ]; then echo \[\e[32m\]:\)\[\e[0m\]; else echo \[\e[31m\]:\(\[\e[0m\]; fi\` \[\033[${cUSER}m\]\u\[\033[0m\]@\[\033[${hc}m\]\h\[\033[0m\]:\[\033[${cPATH}m\]\W\[\033[0m\]\$ "	
 else
-	if [ $onBat == "yes" ]
-	then
-		PS1="[\t][\`batstatus\`] \` if [ \$? = 0 ]; then echo \[\e[32m\]:\)\[\e[0m\]; else echo \[\e[31m\]:\(\[\e[0m\]; fi\` \u@\h:\W\$ "
-	else
-		PS1="[\t] \` if [ \$? = 0 ]; then echo \[\e[32m\]:\)\[\e[0m\]; else echo \[\e[31m\]:\(\[\e[0m\]; fi\` \u@\h:\W$ "
-	fi
+	PS1="[\t] \` if [ \$? = 0 ]; then echo \[\e[32m\]:\)\[\e[0m\]; else echo \[\e[31m\]:\(\[\e[0m\]; fi\` \u@\h:\W$ "
     # PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
